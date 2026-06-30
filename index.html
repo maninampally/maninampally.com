@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Manikanth Nampally — Applied AI &amp; Agentic Engineer</title>
+<meta name="description" content="Applied AI &amp; Agentic Engineer specializing in multi-agent orchestration, LLM systems, and production data engineering. Builder of Artha AI, AuthPulse/MemZent.ai, and HireCanvas."/>
+<meta property="og:title" content="Manikanth Nampally — Applied AI &amp; Agentic Engineer"/>
+<meta property="og:description" content="Architecting autonomous agentic workflows, multi-agent orchestration systems, and intelligent data pipelines — 74% LLM cost reduction, 11-agent MoE in production."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://maninampally.com"/>
+<meta property="og:image" content="https://maninampally.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Manikanth Nampally — Applied AI &amp; Agentic Engineer"/>
+<meta name="twitter:description" content="Builder of 11-agent LLM systems, semantic caches, and production data pipelines."/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23000'/><text x='3' y='24' font-size='22' font-family='monospace' font-weight='bold' fill='%2363b3ed'>M</text></svg>"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     BOOT SCREEN
+============================================================ -->
+<div id="boot" role="status" aria-label="Loading portfolio">
+  <div class="boot-line" id="b0"><span class="ok">[  OK  ]</span> Initializing kernel modules…</div>
+  <div class="boot-line" id="b1"><span class="ok">[  OK  ]</span> Loading agentic runtime… <span class="hi">LangGraph v0.2</span></div>
+  <div class="boot-line" id="b2"><span class="ok">[  OK  ]</span> Mounting vector store… <span class="hi">Qdrant / pgvector</span></div>
+  <div class="boot-line" id="b3"><span class="ok">[  OK  ]</span> Spawning 11 agents… <span class="hi">Artha AI MoE online</span></div>
+  <div class="boot-line" id="b4"><span class="ok">[  OK  ]</span> Semantic cache warm — hit rate <span class="hi">58%</span></div>
+  <div class="boot-line" id="b5"><span class="ok">[  OK  ]</span> Portfolio ready. Manikanth N — Applied AI Engineer.</div>
+  <button class="boot-skip" id="boot-skip">SKIP →</button>
+</div>
+
+<!-- ============================================================
+     NAV
+============================================================ -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#home">[AI<em>//</em>ENG]</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <!-- TODO: Replace # with your Google Drive resume link -->
+      <li><a href="#" class="resume-nav-link" target="_blank" rel="noopener noreferrer">Resume ↓</a></li>
+    </ul>
+    <div class="nav-status" aria-label="System operational">
+      <div class="s-dot"></div>SYSTEM : OPERATIONAL
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="home" aria-label="Introduction">
+  <div class="hero-wrap">
+
+    <!-- LEFT: giant metrics -->
+    <div class="hero-metrics" aria-label="Key engineering metrics">
+      <div class="metric-row" id="m0">
+        <span class="metric-num">74</span>
+        <span class="metric-unit">%</span>
+        <span class="metric-label">LLM cost<br>reduction</span>
+      </div>
+      <div class="metric-row" id="m1">
+        <span class="metric-num">8.5K</span>
+        <span class="metric-unit">+</span>
+        <span class="metric-label">stocks analyzed<br>nightly</span>
+      </div>
+      <div class="metric-row" id="m2">
+        <span class="metric-num">11</span>
+        <span class="metric-unit">×</span>
+        <span class="metric-label">agent MoE<br>in production</span>
+      </div>
+      <div class="metric-row" id="m3">
+        <span class="metric-num">0.4</span>
+        <span class="metric-unit">s</span>
+        <span class="metric-label">p95 response<br>latency</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: identity + agent graph -->
+    <div class="hero-right">
+      <span class="hero-eyebrow">// Applied AI &amp; Agentic Engineer</span>
+      <h1 class="hero-name">MANIKANTH<br><span>NAMPALLY</span></h1>
+      <p class="hero-sub">
+        Architecting autonomous agentic workflows, multi-agent orchestration systems, and intelligent data pipelines — from semantic caches in Go/Rust to 11-agent LangGraph MoE systems analyzing the entire US equity market.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-solid">Explore Systems</a>
+        <a href="#contact" class="btn btn-ghost">Initiate Contact</a>
+        <!-- TODO: Replace # with your Google Drive resume link -->
+        <a href="#" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Download CV ↓</a>
+      </div>
+
+      <!-- Agent graph -->
+      <div class="graph-wrap" style="margin-top:36px" aria-label="Live agent orchestration graph">
+        <span class="graph-label">ARTHA AI // AGENT GRAPH</span>
+        <canvas id="agent-canvas"></canvas>
+        <div class="graph-legend">
+          <div class="leg-item"><div class="leg-dot" style="background:#9f7aea"></div>Router</div>
+          <div class="leg-item"><div class="leg-dot" style="background:#63b3ed"></div>Cap-tier agents</div>
+          <div class="leg-item"><div class="leg-dot" style="background:#68d391"></div>Sub-agents</div>
+          <div class="leg-item"><div class="leg-dot" style="background:#fbbf24"></div>Output</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     EXPERIENCE
+     TODO: Fill all entries from LinkedIn: linkedin.com/in/manikanthn/
+============================================================ -->
+<section class="doc-section" id="experience">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-mark">Work History</div>
+      <h2 class="sec-title">Where I've Shipped</h2>
+      <p class="sec-body">Production experience across agentic AI, data engineering, and full-stack systems — every metric below is from deployed, real-traffic software.</p>
+    </div>
+
+    <div class="exp-list">
+
+      <!-- TODO: Replace with your most recent role -->
+      <div class="exp-item reveal">
+        <div class="exp-main">
+          <div class="exp-company">COMPANY NAME</div>
+          <div class="exp-role">Applied AI / Agentic Engineer</div>
+          <ul class="exp-bullets">
+            <li>TODO: Impact statement — lead with the metric (e.g., "Reduced LLM inference cost 74% by building 4-layer semantic cache in Go")</li>
+            <li>TODO: Impact statement — what shipped, what it did in prod</li>
+            <li>TODO: Impact statement — team size, scope, scale</li>
+          </ul>
+        </div>
+        <div class="exp-dates">MON YEAR – PRESENT</div>
+      </div>
+
+      <!-- TODO: Replace with second role -->
+      <div class="exp-item reveal">
+        <div class="exp-main">
+          <div class="exp-company">COMPANY NAME</div>
+          <div class="exp-role">Data Engineer / ML Engineer</div>
+          <ul class="exp-bullets">
+            <li>TODO: Impact statement</li>
+            <li>TODO: Impact statement</li>
+            <li>TODO: Impact statement</li>
+          </ul>
+        </div>
+        <div class="exp-dates">MON YEAR – MON YEAR</div>
+      </div>
+
+      <!-- TODO: Replace with third role (or remove if not applicable) -->
+      <div class="exp-item reveal">
+        <div class="exp-main">
+          <div class="exp-company">COMPANY NAME</div>
+          <div class="exp-role">Software Engineer / Data Analyst</div>
+          <ul class="exp-bullets">
+            <li>TODO: Impact statement</li>
+            <li>TODO: Impact statement</li>
+          </ul>
+        </div>
+        <div class="exp-dates">MON YEAR – MON YEAR</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STACK
+============================================================ -->
+<section class="doc-section" id="stack">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-mark">Technical Arsenal</div>
+      <h2 class="sec-title">The Stack</h2>
+      <p class="sec-body">Production-grade expertise across agentic orchestration, data engineering, and core AI — each layer battle-tested in deployed systems.</p>
+    </div>
+    <div class="skill-groups reveal">
+      <div>
+        <div class="skill-group-label">Agentic AI</div>
+        <div class="tag-cloud">
+          <span class="tag">LangGraph</span><span class="tag">LangChain</span>
+          <span class="tag">CrewAI</span><span class="tag">AutoGen</span>
+          <span class="tag">MCP</span><span class="tag">RAG</span>
+          <span class="tag">Semantic Cache</span><span class="tag">FastAPI</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group-label">Data Engineering</div>
+        <div class="tag-cloud">
+          <span class="tag">Apache Kafka</span><span class="tag">Airflow</span>
+          <span class="tag">PySpark</span><span class="tag">Snowflake</span>
+          <span class="tag">Databricks</span><span class="tag">dbt</span>
+          <span class="tag">Qdrant</span><span class="tag">pgvector</span>
+          <span class="tag">Parquet</span><span class="tag">AWS Bedrock</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group-label">Core AI</div>
+        <div class="tag-cloud">
+          <span class="tag">LLMs</span><span class="tag">FinBERT</span>
+          <span class="tag">Fine-tuning</span><span class="tag">PyTorch</span>
+          <span class="tag">Claude API</span><span class="tag">OpenAI</span>
+          <span class="tag">LlamaIndex</span><span class="tag">FastEmbed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS
+============================================================ -->
+<section class="doc-section" id="projects">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-mark">Case Studies</div>
+      <h2 class="sec-title">Systems Built</h2>
+      <p class="sec-body">Not demos. Not tutorials. Systems that run in production, handle real data, and make decisions at scale.</p>
+    </div>
+
+    <div class="project-list">
+
+      <div class="project-item reveal" style="--proj-color:#63b3ed">
+        <div class="proj-id">SYS — 01</div>
+        <div class="proj-body">
+          <div class="proj-title">AUTHPULSE / MEMZENT.AI</div>
+          <div class="proj-desc">Production LLM gateway in Go with 4-layer semantic cache: SHA-256 literal → canonical normalization → entity-keyed hot path (6 typed regex extractors, directional awareness) → Qdrant vector similarity. Rust gRPC semantic router behind Envoy, 2-replica deployment, 28 SQL migrations. Achieved 74% cost reduction and 89% latency improvement (3.8s→0.4s) in production traffic.</div>
+          <div class="proj-stack">
+            <span class="stag">Go</span><span class="stag">Rust</span><span class="stag">gRPC</span>
+            <span class="stag">Qdrant</span><span class="stag">Envoy</span><span class="stag">Kafka</span>
+          </div>
+        </div>
+        <!-- TODO: Replace # with GitHub or demo URL for SYS-01 -->
+        <a href="#" class="proj-arrow" target="_blank" rel="noopener noreferrer" aria-label="View AuthPulse / MemZent.ai project">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+
+      <div class="project-item reveal" style="--proj-color:#9f7aea">
+        <div class="proj-id">SYS — 02</div>
+        <div class="proj-body">
+          <div class="proj-title">ARTHA AI</div>
+          <div class="proj-desc">11-agent LangGraph mixture-of-experts for equity research. 5 market-cap-tier specialists (MicroNano → MegaCap) + 6 parallel sub-agents (DCF Engine, FilingRAG, FinBERT Sentiment, Risk Scorer, Smart Money, Industry Context). 8,500+ stocks nightly via Airflow. 10,000 Monte Carlo DCF simulations per run. All financial math deterministic in Python/NumPy; Claude API used only for narrative generation — a deliberate architectural boundary.</div>
+          <div class="proj-stack">
+            <span class="stag">LangGraph</span><span class="stag">FinBERT</span>
+            <span class="stag">pgvector</span><span class="stag">Claude API</span>
+            <span class="stag">Airflow</span><span class="stag">TimescaleDB</span>
+          </div>
+        </div>
+        <!-- TODO: Replace # with GitHub or demo URL for SYS-02 -->
+        <a href="#" class="proj-arrow" target="_blank" rel="noopener noreferrer" aria-label="View Artha AI project">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+
+      <div class="project-item reveal" style="--proj-color:#68d391">
+        <div class="proj-id">SYS — 03</div>
+        <div class="proj-body">
+          <div class="proj-title">HIRECANVAS</div>
+          <div class="proj-desc">AI-powered resume and job match platform. Next.js / TypeScript frontend, FastAPI backend, BullMQ + Redis for async job processing. 100+ active users, 99%+ reliability. Real analytical insight powering the DA resume track: properties with longer minimum-stay requirements showed ~2× higher cancellation rates — a finding that directly changed pricing policy.</div>
+          <div class="proj-stack">
+            <span class="stag">Next.js</span><span class="stag">TypeScript</span>
+            <span class="stag">FastAPI</span><span class="stag">BullMQ</span>
+            <span class="stag">Redis</span>
+          </div>
+        </div>
+        <!-- TODO: Replace # with GitHub or demo URL for SYS-03 -->
+        <a href="#" class="proj-arrow" target="_blank" rel="noopener noreferrer" aria-label="View HireCanvas project">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+
+      <div class="project-item reveal" style="--proj-color:#f6ad55">
+        <div class="proj-id">SYS — 04</div>
+        <div class="proj-body">
+          <div class="proj-title">PREDICTIVE ANALYTICS ENGINE</div>
+          <div class="proj-desc">End-to-end MLOps pipeline for student performance forecasting. PySpark feature engineering, dbt transformations on Snowflake, Airflow orchestration, Databricks model training with drift monitoring, real-time scoring API on AWS. Built to demonstrate the full DE + ML lifecycle in a single deployable system.</div>
+          <div class="proj-stack">
+            <span class="stag">PySpark</span><span class="stag">dbt</span>
+            <span class="stag">Snowflake</span><span class="stag">Airflow</span>
+            <span class="stag">Databricks</span><span class="stag">AWS</span>
+          </div>
+        </div>
+        <!-- TODO: Replace # with GitHub or demo URL for SYS-04 -->
+        <a href="#" class="proj-arrow" target="_blank" rel="noopener noreferrer" aria-label="View Predictive Analytics Engine project">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THOUGHT LEADERSHIP
+     TODO: Change each <div class="thought-item"> to <a class="thought-item" href="URL">
+     when you publish the article / get the cert link / etc.
+============================================================ -->
+<section class="doc-section section-warm" id="research">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-mark" style="color:var(--t3)">Research &amp; Writing</div>
+      <h2 class="sec-title">Thought Leadership</h2>
+      <p class="sec-body">Technical writing, open-source contributions, and deep dives into the infrastructure of intelligent systems.</p>
+    </div>
+    <div class="thought-grid">
+      <div class="thought-item reveal">
+        <div class="th-type">🏆 Hackathon</div>
+        <div class="th-title">Miami Hackathon — AI Systems Track</div>
+        <div class="th-desc">Winning architecture for a real-time multi-agent triage system under a 24-hour constraint using LangGraph orchestration at production scale.</div>
+      </div>
+      <div class="thought-item reveal">
+        <div class="th-type">✍️ Deep Dive</div>
+        <div class="th-title">Why Regex Beats Vectors at the Hot-Path Cache Layer</div>
+        <div class="th-desc">The architectural case for entity-keyed caching with directional awareness inside LLM gateways — and when vector similarity is the wrong tool.</div>
+      </div>
+      <div class="thought-item reveal">
+        <div class="th-type">🔬 Research</div>
+        <div class="th-title">Model Context Protocol — Agent Personas &amp; Tool Subsets</div>
+        <div class="th-desc">Proposed Agent Personas system for the OpenBB MCP server: pre-configured named tool subsets for quant researcher, macro analyst, and earnings analyst roles.</div>
+      </div>
+      <div class="thought-item reveal">
+        <div class="th-type">✍️ Analysis</div>
+        <div class="th-title">Deterministic Math + LLM Narration: A Hard Boundary</div>
+        <div class="th-desc">Why Artha AI keeps all financial computation in NumPy and uses Claude API only for language — and what breaks when you blur that line.</div>
+      </div>
+      <div class="thought-item reveal">
+        <div class="th-type">🎓 Certification</div>
+        <div class="th-title">AWS AI Practitioner + Cloud Practitioner (2026)</div>
+        <div class="th-desc">Dual AWS certifications anchored in production use: Bedrock, S3, Glue, and Lambda as real deployed infrastructure, not exam prep.</div>
+      </div>
+      <div class="thought-item reveal">
+        <div class="th-type">🎓 Academic</div>
+        <div class="th-title">M.S. Information Technology &amp; Management — FAU (3.9 GPA)</div>
+        <div class="th-desc">Graduate research bridging statistical modeling and production AI systems. CodePath AI110 Honors (ID 375126), AI201 in progress.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT TERMINAL
+============================================================ -->
+<section class="doc-section" id="contact">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-mark">Get in Touch</div>
+      <h2 class="sec-title">Open a Channel</h2>
+      <p class="sec-body">Available for Applied AI, Data Engineering, and Agentic Systems roles. No sponsorship required. Open to relocating anywhere in the US.</p>
+    </div>
+
+    <div class="terminal reveal">
+      <div class="t-bar" aria-hidden="true">
+        <div class="td r"></div><div class="td y"></div><div class="td g"></div>
+        <span class="t-ttl">mani@portfolio — ~/contact</span>
+      </div>
+      <div class="t-body">
+        <div class="t-pre">
+<span class="p">❯</span> <span class="pa">~/portfolio</span> <span class="c">contact --secure --init</span>
+Establishing channel… <span class="blink"></span>
+        </div>
+        <div class="t-form" id="contact-form">
+          <div class="tf">
+            <label class="tf-lbl" for="c-name">&gt; NAME</label>
+            <input class="tf-in" type="text" id="c-name" placeholder="Your name" autocomplete="off"/>
+          </div>
+          <div class="tf">
+            <label class="tf-lbl" for="c-email">&gt; EMAIL</label>
+            <input class="tf-in" type="email" id="c-email" placeholder="your@email.com" autocomplete="off"/>
+          </div>
+          <div class="tf" style="align-items:flex-start">
+            <label class="tf-lbl" for="c-msg" style="padding-top:9px">&gt; MSG</label>
+            <textarea class="tf-in tf-ta" id="c-msg" placeholder="Describe the role, project, or opportunity…"></textarea>
+          </div>
+          <button class="t-submit" id="t-submit" type="button">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            TRANSMIT QUERY
+          </button>
+        </div>
+        <div class="t-out" id="t-out" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:14px;margin-top:20px;flex-wrap:wrap" class="reveal">
+      <a href="mailto:manikanthnampally94@gmail.com" class="btn btn-ghost" style="font-size:.68rem">manikanthnampally94@gmail.com</a>
+      <a href="https://linkedin.com/in/manikanthn/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="font-size:.68rem">linkedin.com/in/manikanthn</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer role="contentinfo">
+  <div class="foot-inner">
+    <div class="foot-logo">MANIKANTH N // AI ENGINEER // SEATTLE, WA</div>
+    <div class="foot-links">
+      <a href="https://github.com/maninampally" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/manikanthn/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:manikanthnampally94@gmail.com">Email</a>
+    </div>
+    <div class="foot-copy">© 2026 Manikanth N.</div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script src="main.js"></script>
+</body>
+</html>

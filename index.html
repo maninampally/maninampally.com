@@ -18,6 +18,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="style.css">
+<noscript>
+  <style>
+    #boot{display:none!important}
+    .metric-row{opacity:1!important;transform:none!important}
+    .reveal{opacity:1!important;transform:none!important}
+  </style>
+</noscript>
 </head>
 <body>
 
@@ -29,7 +36,7 @@
   <div class="boot-line" id="b1"><span class="ok">[  OK  ]</span> Loading agentic runtime… <span class="hi">LangGraph v0.2</span></div>
   <div class="boot-line" id="b2"><span class="ok">[  OK  ]</span> Mounting vector store… <span class="hi">Qdrant / pgvector</span></div>
   <div class="boot-line" id="b3"><span class="ok">[  OK  ]</span> Spawning 11 agents… <span class="hi">Artha AI MoE online</span></div>
-  <div class="boot-line" id="b4"><span class="ok">[  OK  ]</span> Semantic cache warm — hit rate <span class="hi">58%</span></div>
+  <div class="boot-line" id="b4"><span class="ok">[  OK  ]</span> Semantic cache warm — <span class="hi">entity-aware routing</span></div>
   <div class="boot-line" id="b5"><span class="ok">[  OK  ]</span> Portfolio ready. Manikanth N — Applied AI Engineer.</div>
   <button class="boot-skip" id="boot-skip">SKIP →</button>
 </div>
@@ -47,8 +54,8 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#contact">Contact</a></li>
-      <!-- TODO: Replace # with your Google Drive resume link -->
-      <li><a href="#" class="resume-nav-link" target="_blank" rel="noopener noreferrer">Resume ↓</a></li>
+      <!-- FLAG: point at a hosted resume PDF (Google Drive / /resume.pdf). Interim → live portfolio. -->
+      <li><a href="https://maninampally.vercel.app" class="resume-nav-link" target="_blank" rel="noopener noreferrer">Resume ↓</a></li>
     </ul>
     <div class="nav-status" aria-label="System operational">
       <div class="s-dot"></div>SYSTEM : OPERATIONAL
@@ -68,24 +75,24 @@
     <!-- LEFT: giant metrics -->
     <div class="hero-metrics" aria-label="Key engineering metrics">
       <div class="metric-row" id="m0">
-        <span class="metric-num">74</span>
-        <span class="metric-unit">%</span>
-        <span class="metric-label">LLM cost<br>reduction</span>
-      </div>
-      <div class="metric-row" id="m1">
         <span class="metric-num">8.5K</span>
         <span class="metric-unit">+</span>
-        <span class="metric-label">stocks analyzed<br>nightly</span>
+        <span class="metric-label">equities scored<br>nightly</span>
       </div>
-      <div class="metric-row" id="m2">
+      <div class="metric-row" id="m1">
         <span class="metric-num">11</span>
         <span class="metric-unit">×</span>
         <span class="metric-label">agent MoE<br>in production</span>
       </div>
+      <div class="metric-row" id="m2">
+        <span class="metric-num">3</span>
+        <span class="metric-unit">+ yrs</span>
+        <span class="metric-label">shipping production<br>AI &amp; data systems</span>
+      </div>
       <div class="metric-row" id="m3">
-        <span class="metric-num">0.4</span>
-        <span class="metric-unit">s</span>
-        <span class="metric-label">p95 response<br>latency</span>
+        <span class="metric-num">50</span>
+        <span class="metric-unit">%</span>
+        <span class="metric-label">data defects<br>reduced</span>
       </div>
     </div>
 
@@ -99,8 +106,8 @@
       <div class="hero-ctas">
         <a href="#projects" class="btn btn-solid">Explore Systems</a>
         <a href="#contact" class="btn btn-ghost">Initiate Contact</a>
-        <!-- TODO: Replace # with your Google Drive resume link -->
-        <a href="#" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Download CV ↓</a>
+        <!-- FLAG: point at a hosted resume PDF (Google Drive / /resume.pdf). Interim → live portfolio. -->
+        <a href="https://maninampally.vercel.app" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Download CV ↓</a>
       </div>
 
       <!-- Agent graph -->
@@ -121,7 +128,6 @@
 
 <!-- ============================================================
      EXPERIENCE
-     TODO: Fill all entries from LinkedIn: linkedin.com/in/manikanthn/
 ============================================================ -->
 <section class="doc-section" id="experience">
   <div class="container">
@@ -133,45 +139,56 @@
 
     <div class="exp-list">
 
-      <!-- TODO: Replace with your most recent role -->
       <div class="exp-item reveal">
         <div class="exp-main">
-          <div class="exp-company">COMPANY NAME</div>
-          <div class="exp-role">Applied AI / Agentic Engineer</div>
+          <div class="exp-company">OPSYLUX LLC</div>
+          <div class="exp-role">AI Engineer · Seattle, WA (Remote)</div>
           <ul class="exp-bullets">
-            <li>TODO: Impact statement — lead with the metric (e.g., "Reduced LLM inference cost 74% by building 4-layer semantic cache in Go")</li>
-            <li>TODO: Impact statement — what shipped, what it did in prod</li>
-            <li>TODO: Impact statement — team size, scope, scale</li>
+            <li>Building Memzent.AI, a live LLM gateway product in early access — semantic caching, request routing, and reliability for enterprise LLM workloads.</li>
+            <li>Shipped a multi-layer semantic cache: literal-match → normalized-match → entity-aware matching → Qdrant vector similarity, cutting redundant calls to LLM providers.</li>
+            <li>Fixed a cache-correctness bug where near-duplicate prompts referencing different entities produced false-positive hits — added entity-aware matching to a Rust semantic router on FastEmbed embeddings.</li>
+            <li>Contributing retry, backoff, and rate-limiting policies plus integration tests over cache, entity extraction, and routing.</li>
           </ul>
         </div>
-        <div class="exp-dates">MON YEAR – PRESENT</div>
+        <div class="exp-dates">NOV 2025 – PRESENT</div>
       </div>
 
-      <!-- TODO: Replace with second role -->
       <div class="exp-item reveal">
         <div class="exp-main">
-          <div class="exp-company">COMPANY NAME</div>
-          <div class="exp-role">Data Engineer / ML Engineer</div>
+          <div class="exp-company">FAU GENERATIVE INTELLIGENCE LAB</div>
+          <div class="exp-role">AI Research Engineer · Boca Raton, FL</div>
           <ul class="exp-bullets">
-            <li>TODO: Impact statement</li>
-            <li>TODO: Impact statement</li>
-            <li>TODO: Impact statement</li>
+            <li>Built a RAG pipeline (LangGraph, pgvector, LlamaIndex) over SEC filings, earnings transcripts, and news across 500+ tracked equities — cut manual research from ~35 min to under 10 min per company.</li>
+            <li>Ran relevance reviews and source-grounding checks to catch ungrounded output; documented failure patterns to improve chunking and retrieval.</li>
+            <li>Maintained a golden-example eval set to check output consistency across pipeline changes.</li>
           </ul>
         </div>
-        <div class="exp-dates">MON YEAR – MON YEAR</div>
+        <div class="exp-dates">MAY 2025 – MAY 2026</div>
       </div>
 
-      <!-- TODO: Replace with third role (or remove if not applicable) -->
       <div class="exp-item reveal">
         <div class="exp-main">
-          <div class="exp-company">COMPANY NAME</div>
-          <div class="exp-role">Software Engineer / Data Analyst</div>
+          <div class="exp-company">LTIMINDTREE</div>
+          <div class="exp-role">Data Engineer · Hyderabad, India</div>
           <ul class="exp-bullets">
-            <li>TODO: Impact statement</li>
-            <li>TODO: Impact statement</li>
+            <li>Built Python/PySpark/SQL ETL integrating 20+ source systems into Snowflake, Redshift, and BigQuery across 3 client teams in financial services and healthcare.</li>
+            <li>Built an automated data-quality framework across 25+ recurring datasets, reducing downstream defects ~40–50%.</li>
+            <li>Diagnosed a production incident from a silent upstream schema change; added early-failure schema validation. Implemented IAM access control, KMS encryption, and audit logging on regulated pipelines.</li>
           </ul>
         </div>
-        <div class="exp-dates">MON YEAR – MON YEAR</div>
+        <div class="exp-dates">MAY 2022 – JUL 2024</div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-main">
+          <div class="exp-company">KNOWLEDGE SOLUTIONS INDIA</div>
+          <div class="exp-role">AI/ML Engineer Intern · Hyderabad, India</div>
+          <ul class="exp-bullets">
+            <li>Built ETL consolidating 50,000+ records from 5+ source systems into a unified model for ML training.</li>
+            <li>Trained baseline scikit-learn classifiers, comparing algorithms on accuracy, precision, recall, and F1.</li>
+          </ul>
+        </div>
+        <div class="exp-dates">JAN 2022 – APR 2022</div>
       </div>
 
     </div>
@@ -237,15 +254,15 @@
       <div class="project-item reveal" style="--proj-color:#63b3ed">
         <div class="proj-id">SYS — 01</div>
         <div class="proj-body">
-          <div class="proj-title">AUTHPULSE / MEMZENT.AI</div>
-          <div class="proj-desc">Production LLM gateway in Go with 4-layer semantic cache: SHA-256 literal → canonical normalization → entity-keyed hot path (6 typed regex extractors, directional awareness) → Qdrant vector similarity. Rust gRPC semantic router behind Envoy, 2-replica deployment, 28 SQL migrations. Achieved 74% cost reduction and 89% latency improvement (3.8s→0.4s) in production traffic.</div>
+          <div class="proj-title">MEMZENT.AI</div>
+          <div class="proj-desc">Live LLM gateway (Opsylux, early access). Multi-layer semantic cache — literal-match → normalized-match → entity-aware matching → Qdrant vector similarity — to cut redundant provider calls. Rust semantic router on FastEmbed embeddings for similarity-based request routing, plus retry, backoff, and rate-limiting reliability policies. Fixed a cache-correctness bug where near-duplicate prompts on different entities produced false-positive hits.</div>
           <div class="proj-stack">
             <span class="stag">Go</span><span class="stag">Rust</span><span class="stag">gRPC</span>
-            <span class="stag">Qdrant</span><span class="stag">Envoy</span><span class="stag">Kafka</span>
+            <span class="stag">Qdrant</span><span class="stag">Envoy</span><span class="stag">FastEmbed</span>
           </div>
         </div>
-        <!-- TODO: Replace # with GitHub or demo URL for SYS-01 -->
-        <a href="#" class="proj-arrow" target="_blank" rel="noopener noreferrer" aria-label="View AuthPulse / MemZent.ai project">
+        <!-- FLAG: Memzent is proprietary — pointed at product site. Swap if a public URL is preferred. -->
+        <a href="https://memzent.ai" class="proj-arrow" target="_blank" rel="noopener noreferrer" aria-label="View Memzent.ai project">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
       </div>
@@ -254,15 +271,14 @@
         <div class="proj-id">SYS — 02</div>
         <div class="proj-body">
           <div class="proj-title">ARTHA AI</div>
-          <div class="proj-desc">11-agent LangGraph mixture-of-experts for equity research. 5 market-cap-tier specialists (MicroNano → MegaCap) + 6 parallel sub-agents (DCF Engine, FilingRAG, FinBERT Sentiment, Risk Scorer, Smart Money, Industry Context). 8,500+ stocks nightly via Airflow. 10,000 Monte Carlo DCF simulations per run. All financial math deterministic in Python/NumPy; Claude API used only for narrative generation — a deliberate architectural boundary.</div>
+          <div class="proj-desc">11-agent LangGraph pipeline for equity research with a fixed routing flow: router → cap-tier specialist → 6 parallel sub-agents via asyncio.gather (DCF, Filing RAG, FinBERT Sentiment, Risk, Smart Money, Industry). Scores 8,500+ US equities nightly on a scheduled Airflow run. All financial math — Monte Carlo DCF plus Piotroski, Beneish, and Altman models — kept strictly deterministic in Python/NumPy; LLM used only for narrative, to prevent hallucinated metrics. RAG over SEC EDGAR (LlamaIndex + pgvector) with full-text fallback.</div>
           <div class="proj-stack">
             <span class="stag">LangGraph</span><span class="stag">FinBERT</span>
-            <span class="stag">pgvector</span><span class="stag">Claude API</span>
-            <span class="stag">Airflow</span><span class="stag">TimescaleDB</span>
+            <span class="stag">pgvector</span><span class="stag">LlamaIndex</span>
+            <span class="stag">Airflow</span><span class="stag">FastAPI</span>
           </div>
         </div>
-        <!-- TODO: Replace # with GitHub or demo URL for SYS-02 -->
-        <a href="#" class="proj-arrow" target="_blank" rel="noopener noreferrer" aria-label="View Artha AI project">
+        <a href="https://github.com/maninampally/artha.ai" class="proj-arrow" target="_blank" rel="noopener noreferrer" aria-label="View Artha AI project on GitHub">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
       </div>
@@ -271,15 +287,15 @@
         <div class="proj-id">SYS — 03</div>
         <div class="proj-body">
           <div class="proj-title">HIRECANVAS</div>
-          <div class="proj-desc">AI-powered resume and job match platform. Next.js / TypeScript frontend, FastAPI backend, BullMQ + Redis for async job processing. 100+ active users, 99%+ reliability. Real analytical insight powering the DA resume track: properties with longer minimum-stay requirements showed ~2× higher cancellation rates — a finding that directly changed pricing policy.</div>
+          <div class="proj-desc">AI-powered hiring workflow platform (v0.6.0, closed beta, 100-user cap). Built the MCP client connecting HireCanvas to the Dice MCP server — connector and data-mapping logic that pulls job postings into the tracking model, live in production. OAuth 2.0 Gmail flow for email ingestion. Async LLM orchestration on BullMQ queues with automatic failover across OpenAI, Anthropic, and Gemini. 27-table Supabase schema with row-level security, behind Nginx with TLS and rate limiting; CI/CD via GitHub Actions.</div>
           <div class="proj-stack">
-            <span class="stag">Next.js</span><span class="stag">TypeScript</span>
-            <span class="stag">FastAPI</span><span class="stag">BullMQ</span>
-            <span class="stag">Redis</span>
+            <span class="stag">Next.js</span><span class="stag">MCP</span>
+            <span class="stag">BullMQ</span><span class="stag">Supabase</span>
+            <span class="stag">Docker</span><span class="stag">Nginx</span>
           </div>
         </div>
-        <!-- TODO: Replace # with GitHub or demo URL for SYS-03 -->
-        <a href="#" class="proj-arrow" target="_blank" rel="noopener noreferrer" aria-label="View HireCanvas project">
+        <!-- FLAG: No public HireCanvas URL in resume — pointed at GitHub profile. Swap for repo/demo if available. -->
+        <a href="https://github.com/maninampally" class="proj-arrow" target="_blank" rel="noopener noreferrer" aria-label="View HireCanvas project">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
       </div>
@@ -287,16 +303,16 @@
       <div class="project-item reveal" style="--proj-color:#f6ad55">
         <div class="proj-id">SYS — 04</div>
         <div class="proj-body">
-          <div class="proj-title">PREDICTIVE ANALYTICS ENGINE</div>
-          <div class="proj-desc">End-to-end MLOps pipeline for student performance forecasting. PySpark feature engineering, dbt transformations on Snowflake, Airflow orchestration, Databricks model training with drift monitoring, real-time scoring API on AWS. Built to demonstrate the full DE + ML lifecycle in a single deployable system.</div>
+          <div class="proj-title">PANTRYLY</div>
+          <div class="proj-desc">Offline-first smart kitchen app. Built an offline-first sync architecture with a local outbox, retry classification, and dead-letter handling — solving real connectivity constraints for users on flaky mobile networks. Tesseract OCR for receipt/label capture, Celery + Redis for background processing.</div>
           <div class="proj-stack">
-            <span class="stag">PySpark</span><span class="stag">dbt</span>
-            <span class="stag">Snowflake</span><span class="stag">Airflow</span>
-            <span class="stag">Databricks</span><span class="stag">AWS</span>
+            <span class="stag">React Native</span><span class="stag">FastAPI</span>
+            <span class="stag">Tesseract OCR</span><span class="stag">Celery</span>
+            <span class="stag">Redis</span><span class="stag">Supabase</span>
           </div>
         </div>
-        <!-- TODO: Replace # with GitHub or demo URL for SYS-04 -->
-        <a href="#" class="proj-arrow" target="_blank" rel="noopener noreferrer" aria-label="View Predictive Analytics Engine project">
+        <!-- FLAG: No public Pantryly URL in resume — pointed at GitHub profile. Swap if a repo/demo exists. -->
+        <a href="https://github.com/maninampally" class="proj-arrow" target="_blank" rel="noopener noreferrer" aria-label="View Pantryly project">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
       </div>

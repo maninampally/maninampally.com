@@ -11,13 +11,13 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     setTimeout(() => {
       const el = document.getElementById(id);
       if (el) el.classList.add('show');
-    }, 300 + i * 380);
+    }, 150 + i * 170);
   });
   const finish = () => {
     document.body.classList.add('booted');
-    setTimeout(showMetrics, 200);
+    setTimeout(showMetrics, 150);
   };
-  setTimeout(finish, 300 + lines.length * 380 + 600);
+  setTimeout(finish, 150 + lines.length * 170 + 300);
   document.getElementById('boot-skip').addEventListener('click', () => {
     finish();
   });
@@ -228,6 +228,17 @@ submitBtn.addEventListener('click', async () => {
     tOut.classList.add('on');
     tOut.style.color = '#fc8181';
     tOut.textContent = '> Error: all fields required. Retry.';
+    return;
+  }
+
+  /* Endpoint not configured yet → don't fake a transmit. Route to direct email. */
+  if (FORMSPREE_ENDPOINT.includes('YOUR_FORMSPREE_ID')) {
+    tOut.classList.add('on');
+    tOut.style.color = 'var(--blue)';
+    const subject = encodeURIComponent(`Portfolio contact — ${name}`);
+    const body = encodeURIComponent(`${msg}\n\n— ${name} (${email})`);
+    tOut.textContent = '> Channel not yet wired. Opening direct email…';
+    window.location.href = `mailto:manikanthnampally94@gmail.com?subject=${subject}&body=${body}`;
     return;
   }
 
